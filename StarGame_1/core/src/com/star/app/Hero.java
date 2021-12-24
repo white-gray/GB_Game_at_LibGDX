@@ -56,14 +56,14 @@ public class Hero {
         if (position.x < 32) {
             position.x = 32;
         }
-        if (position.x > 1248) {
-            position.x = 1248;
+        if (position.x > ScreenManager.SCREEN_WIDTH-32) {
+            position.x = ScreenManager.SCREEN_WIDTH-32;
         }
         if (position.y < 32) {
             position.y = 32;
         }
-        if (position.y > 688) {
-            position.y = 688;
+        if (position.y > ScreenManager.SCREEN_HEIGHT-32) {
+            position.y = ScreenManager.SCREEN_HEIGHT-32;
         }
 
 
