@@ -9,18 +9,12 @@ public class Asteroid {
     private Texture asteroidImg;
     private Vector2 position;
     private float angle;
-//    private Vector2 lastDisplacement;
 
     public Asteroid() {
         this.asteroidImg = new Texture("asteroid.png");
         this.position = new Vector2(startPosition()[0], startPosition()[1]);
         this.angle = angleStart();
-//        this.lastDisplacement = new Vector2(0, 0);
     }
-
-//    public Vector2 getLastDisplacement() {
-//        return lastDisplacement;
-//    }
 
     private float angleStart() {
         return MathUtils.random(0, 360);
@@ -51,8 +45,6 @@ public class Asteroid {
     public void update(float dt) {
         position.x += MathUtils.cosDeg(angle) * 30.0f * dt;
         position.y += MathUtils.sinDeg(angle) * 30.0f * dt;
-//        lastDisplacement.set(MathUtils.cosDeg(angle) * 240.0f * dt,
-//                MathUtils.sinDeg(angle) * 240.0f * dt);
 
 
         if (position.x < -128 || position.x > ScreenManager.SCREEN_WIDTH + 128
