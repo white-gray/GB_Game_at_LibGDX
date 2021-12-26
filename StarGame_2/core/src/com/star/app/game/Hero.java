@@ -8,8 +8,11 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.star.app.screen.ScreenManager;
 
+import java.text.AttributedString;
+
 public class Hero {
     private GameController gc;
+    private Asteroid aster;
     private Texture texture;
     private Vector2 position;
     private Vector2 velocity;
@@ -32,6 +35,7 @@ public class Hero {
         this.velocity = new Vector2(0, 0);
         this.angle = 0.0f;
         this.enginePower = 500.0f;
+//        this.aster = new Asteroid();
     }
 
     public void render(SpriteBatch batch) {
@@ -48,6 +52,20 @@ public class Hero {
                 gc.getBulletController().setup(position.x, position.y,
                         MathUtils.cosDeg(angle) * 500.0f + velocity.x,
                         MathUtils.sinDeg(angle) * 500.0f + velocity.y);
+            }
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.Q)) {
+
+            if (fireTimer > 1f) {
+                fireTimer = 0.0f;
+System.out.println("Input.Keys.Q\n\taster.getPosition().x = " + position.x);
+System.out.println("\tgetPosition().y = " + position.y);
+//            gc.getAsteroidController().setup(aster.getPosition().x, aster.getPosition().y,
+//                    aster.getVelocity().x, aster.getPosition().y);
+                gc.getAsteroidController().setup(640.0f, 640.0f,
+                        MathUtils.cosDeg(angle) * 500.0f + velocity.x,
+                        MathUtils.sinDeg(angle) * 500.0f + velocity.y);
+
             }
         }
 

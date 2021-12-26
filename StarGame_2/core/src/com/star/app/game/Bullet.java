@@ -22,10 +22,10 @@ public class Bullet implements Poolable {
         return velocity;
     }
 
-    public Bullet() {
-        this.position = new Vector2(0, 0);
-        this.velocity = new Vector2(0, 0);
-        this.active = false;
+        public Bullet() {
+            this.position = new Vector2(0, 0);
+            this.velocity = new Vector2(0, 0);
+            this.active = false;
     }
 
     public void deactivate() {
