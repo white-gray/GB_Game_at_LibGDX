@@ -7,12 +7,15 @@ import com.badlogic.gdx.math.Vector2;
 import com.star.app.game.helpers.Poolable;
 import com.star.app.screen.ScreenManager;
 
+import java.util.PrimitiveIterator;
+
 public class Asteroid implements Poolable {
     private GameController gc;
     private Vector2 position;
     private Vector2 velocity;
     private boolean active;
     private float angle;
+    private Hero hero;
 
 
     @Override
@@ -40,13 +43,12 @@ public class Asteroid implements Poolable {
     public void update(float dt) {
         position.x += MathUtils.cosDeg(angle) * 30.0f * dt;
         position.y += MathUtils.sinDeg(angle) * 30.0f * dt;
-        if (position.x < -128 || position.x > ScreenManager.SCREEN_WIDTH + 128
-                || position.y < -128 || position.y > ScreenManager.SCREEN_HEIGHT + 128) {
-            deactivate();
-//            new Asteroid();
-//            position.x = startPosition()[0];
-//            position.y = startPosition()[1];
-//            angle = angleStart();
+        if (position.x < -128 || position.x > ScreenManager.SCREEN_WIDTH + 500
+                || position.y < -128 || position.y > ScreenManager.SCREEN_HEIGHT + 500) {
+//            deactivate();
+            position.x = startPosition()[0];
+            position.y = startPosition()[1];
+            angle = angleStart();
 //System.out.println("update startPosition()[0] = " + position.x);
 //System.out.println("update startPosition()[1] = " + position.y);
 //            gc.getAsteroidController().setup(position.x, position.y,
@@ -68,11 +70,11 @@ System.out.println("activate vy = " + vy);
         active = true;
     }
 
-    private float angleStart() {
+    protected float angleStart() {
         return MathUtils.random(0, 360);
     }
 
-    private int[] startPosition() {
+    protected int[] startPosition() {
         if (MathUtils.randomBoolean()) {
             if (MathUtils.randomBoolean()) {
                 return new int[]{MathUtils.random(0, ScreenManager.SCREEN_WIDTH), -128};

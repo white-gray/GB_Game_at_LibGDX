@@ -35,7 +35,7 @@ public class Hero {
         this.velocity = new Vector2(0, 0);
         this.angle = 0.0f;
         this.enginePower = 500.0f;
-//        this.aster = new Asteroid();
+        this.aster = new Asteroid();
     }
 
     public void render(SpriteBatch batch) {
@@ -58,13 +58,13 @@ public class Hero {
 
             if (fireTimer > 1f) {
                 fireTimer = 0.0f;
-System.out.println("Input.Keys.Q\n\taster.getPosition().x = " + position.x);
-System.out.println("\tgetPosition().y = " + position.y);
+//System.out.println("Input.Keys.Q\n\taster.getPosition().x = " + position.x);
+//System.out.println("\tgetPosition().y = " + position.y);
 //            gc.getAsteroidController().setup(aster.getPosition().x, aster.getPosition().y,
 //                    aster.getVelocity().x, aster.getPosition().y);
-                gc.getAsteroidController().setup(640.0f, 640.0f,
-                        MathUtils.cosDeg(angle) * 500.0f + velocity.x,
-                        MathUtils.sinDeg(angle) * 500.0f + velocity.y);
+
+//                angle = aster.angleStart();
+                addAsteroid(dt);
 
             }
         }
@@ -78,6 +78,10 @@ System.out.println("\tgetPosition().y = " + position.y);
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {
             velocity.x += MathUtils.cosDeg(angle) * enginePower * dt;
             velocity.y += MathUtils.sinDeg(angle) * enginePower * dt;
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.S)) {
+            position.x -= MathUtils.cosDeg(angle) * 120.0f * dt;
+            position.y -= MathUtils.sinDeg(angle) * 120.0f * dt;
         }
         position.mulAdd(velocity, dt);
 
@@ -104,5 +108,19 @@ System.out.println("\tgetPosition().y = " + position.y);
             velocity.y *= -0.5f;
         }
 
+    }
+
+    protected void addAsteroid(float dt) {
+        int[] pos = aster.startPosition();
+        float pox = pos[0];
+        float poy = pos[1];
+        float angle = aster.angleStart();
+
+System.out.println("pox = " + pox);
+System.out.println("poy = " + poy);
+System.out.println("angle = " + angle);
+        gc.getAsteroidController().setup(pox, poy,
+                MathUtils.cosDeg(angle) * 30.0f * dt,
+                MathUtils.sinDeg(angle) * 30.0f * dt);
     }
 }
