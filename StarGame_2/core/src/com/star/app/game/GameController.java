@@ -49,14 +49,20 @@ public class GameController {
         for (int i = 0; i < bulletController.getActiveList().size(); i++) {
             Bullet b = bulletController.getActiveList().get(i);
             for (int q = 0; q < asteroidController.getActiveList().size(); q++) {
-System.out.println("getPositions() = " + asteroid.getPosition()+"\t" + b.getPosition()+"\t" + hero.getPosition());
-            if(asteroid.getPosition().dst(b.getPosition()) < 128.0f){
+                Asteroid a = asteroidController.getActiveList().get(q);
+System.out.println("getPositions() = " + a.getPosition()+"\t" + b.getPosition()+"\t" + hero.getPosition());
+            if(a.getPosition().dst(b.getPosition()) < 128.0f){
                 System.out.println("Астероид погиб!");
                 b.deactivate();
-                asteroid.deactivate();
+                a.deactivate();
             }
             }
-
+        }
+            for (int q = 0; q < asteroidController.getActiveList().size(); q++) {
+                Asteroid a = asteroidController.getActiveList().get(q);
+                if(a.getPosition().dst(hero.getPosition()) < (128+20)){
+                    a.deactivate();
+            }
         }
     }
 }

@@ -38,6 +38,7 @@ public abstract class ObjectPool<T extends Poolable> {
         }
         T temp = freeList.remove(freeList.size() - 1);
         activeList.add(temp);
+System.out.println("\t\t\tgetActiveElement temp = " + temp);
         return temp;
     }
 

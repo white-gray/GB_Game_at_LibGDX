@@ -45,15 +45,9 @@ public class Asteroid implements Poolable {
         position.y += MathUtils.sinDeg(angle) * 30.0f * dt;
         if (position.x < -128 || position.x > ScreenManager.SCREEN_WIDTH + 500
                 || position.y < -128 || position.y > ScreenManager.SCREEN_HEIGHT + 500) {
-//            deactivate();
             position.x = startPosition()[0];
             position.y = startPosition()[1];
             angle = angleStart();
-//System.out.println("update startPosition()[0] = " + position.x);
-//System.out.println("update startPosition()[1] = " + position.y);
-//            gc.getAsteroidController().setup(position.x, position.y,
-//                    MathUtils.cosDeg(angle) * 30.0f* dt,
-//                    MathUtils.sinDeg(angle) * 30.0f* dt);
 
         }
     }

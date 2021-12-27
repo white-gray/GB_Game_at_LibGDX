@@ -58,12 +58,6 @@ public class Hero {
 
             if (fireTimer > 1f) {
                 fireTimer = 0.0f;
-//System.out.println("Input.Keys.Q\n\taster.getPosition().x = " + position.x);
-//System.out.println("\tgetPosition().y = " + position.y);
-//            gc.getAsteroidController().setup(aster.getPosition().x, aster.getPosition().y,
-//                    aster.getVelocity().x, aster.getPosition().y);
-
-//                angle = aster.angleStart();
                 addAsteroid(dt);
 
             }
