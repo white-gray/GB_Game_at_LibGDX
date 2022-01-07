@@ -182,7 +182,7 @@ public class GameController {
         for (int i = 0; i < ammunitionController.getActiveList().size(); i++) {
             Ammunition ammunition = ammunitionController.getActiveList().get(i);
             if (ammunition.getHitArea().contains(hero.getPosition())) {
-                this.currentWeapon.setCurBullets(20);
+                currentWeapon.setCurBullets(20);
             ammunition.deactivate();
         }
         }

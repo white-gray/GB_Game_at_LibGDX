@@ -37,8 +37,9 @@ public class Weapon {
     public void setCurBullets(int curBul) {
         this.curBullets += curBul;
     }
-    public Weapon(){this.curBullets =getCurBullets(); }
 
+
+//    public Weapon(){this.curBullets=getCurBullets(); }
     public Weapon(GameController gc) {
         this.gc = gc;
     }
