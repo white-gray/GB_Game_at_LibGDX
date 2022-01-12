@@ -70,7 +70,7 @@ System.out.println("hero.getHp() = "+  hero.getHp());
         ScreenUtils.clear(0.0f, 0.0f, 0.0f, 1);
         batch.begin();
         font72.draw(batch, "Game over", 0, 600, 1280, Align.center, false);
-        font24.draw(batch, "SCORE: "+ hero.getHp()), 0, 400, 1280, Align.center, false);
+        font24.draw(batch, "SCORE: "+ hero.getHp(), 0, 400, 1280, Align.center, false);
         batch.end();
         stage.draw();
     }
