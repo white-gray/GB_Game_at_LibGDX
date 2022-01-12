@@ -1,6 +1,7 @@
 # not working
 
 Школьный вопрос: 
+
 		есть
 			public class Hero {
 				public int hp;
@@ -24,7 +25,7 @@
 				@Override
 				public void render(float delta) {
 			System.out.println("hero.getHp() = "+  hero.getHp());  		почему в этом месте показывается hero [NullPointException].getHp());   Hero: null
-													                                      И как получить тут значение hp из класса Hero
+											И как получить тут значение hp из класса Hero
 			 .................  
 				}
 			}
