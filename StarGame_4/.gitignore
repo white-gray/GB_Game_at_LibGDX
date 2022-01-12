@@ -1,9 +1,24 @@
-## Java
+# Default ignored files
+/shelf/
+/workspace.xml
+/out
+.gitignore
+gitignore
+!**/.gitignore
+/serverFiles
+HELP.md
+!.mvn/wrapper/
+!**/src/main/**/target/
+!**/src/test/**/target/
 
+## Java
 *.class
 *.war
 *.ear
 hs_err_pid*
+/target
+**/target
+target/
 
 ## Robovm
 /ios/robovm-build/
@@ -24,15 +39,21 @@ www-test/
 /android/libs/x86/
 /android/libs/x86_64/
 /android/gen/
-.idea/
 *.ipr
 *.iws
 *.iml
 /android/out/
 com_crashlytics_export_strings.xml
 
-## Eclipse
+### IntelliJ IDEA ###
+/.idea
+.idea
+.idea/
+*.iws
+*.iml
+*.ipr
 
+## Eclipse
 .classpath
 .project
 .metadata/
@@ -50,8 +71,19 @@ com_crashlytics_export_strings.xml
 .externalToolBuilders/
 *.launch
 
-## NetBeans
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
+### NetBeans ###
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 /nbproject/private/
 /android/nbproject/private/
 /core/nbproject/private/
@@ -89,9 +121,12 @@ com_crashlytics_export_strings.xml
 
 nbactions.xml
 nb-configuration.xml
+/.nb-gradle/
+
+### VS Code ###
+.vscode/ 
 
 ## Gradle
-
 /local.properties
 .gradle/
 gradle-app.setting

@@ -1,22 +1,9 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-/out
-.gitignore
-/serverFiles
-HELP.md
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
 ## Java
+
 *.class
 *.war
 *.ear
 hs_err_pid*
-/target
-**/target
-target/
 
 ## Robovm
 /ios/robovm-build/
@@ -44,14 +31,8 @@ www-test/
 /android/out/
 com_crashlytics_export_strings.xml
 
-### IntelliJ IDEA ###
-/.idea
-.idea
-*.iws
-*.iml
-*.ipr
-
 ## Eclipse
+
 .classpath
 .project
 .metadata/
@@ -69,19 +50,8 @@ com_crashlytics_export_strings.xml
 .externalToolBuilders/
 *.launch
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+## NetBeans
 
-### NetBeans ###
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 /nbproject/private/
 /android/nbproject/private/
 /core/nbproject/private/
@@ -119,12 +89,9 @@ build/
 
 nbactions.xml
 nb-configuration.xml
-/.nb-gradle/
-
-### VS Code ###
-.vscode/ 
 
 ## Gradle
+
 /local.properties
 .gradle/
 gradle-app.setting

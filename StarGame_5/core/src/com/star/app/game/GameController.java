@@ -117,7 +117,7 @@ public class GameController {
             if(hero.getHitArea().contains(p.getPosition())){
                 hero.consume(p);
                 particleController.getEffectBuilder().takePowerUpEffect(p.getPosition().x,p.getPosition().y );
-                p.deactivate();
+                 p.deactivate();
             }
         }
 

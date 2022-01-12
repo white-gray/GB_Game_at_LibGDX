@@ -23,7 +23,7 @@ public class Hero {
     private int score;
     private int scoreView;
     private int hpMax;
-    private int hp;
+    public int hp;
     private StringBuilder sb;
     private Circle hitArea;
     private Weapon currentWeapon;
@@ -61,7 +61,7 @@ public class Hero {
         this.angle = 0.0f;
         this.enginePower = 500.0f;
         this.hpMax = 100;
-        this.hp = hpMax;
+        this.hp = 1;
         this.sb = new StringBuilder();
         this.hitArea = new Circle(position, 29);
         this.currentWeapon = new Weapon(gc, this, "Laser", 0.1f, 1, 600.0f, 300,
@@ -105,9 +105,28 @@ public class Hero {
         }
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
     public void update(float dt) {
         fireTimer += dt;
         updateScore(dt);
+
+        if (hp<=0) {
+System.out.println("heronHero.hp = " + hp);
+setHp(1);
+System.out.println("heronHero.hp = " + hp);
+            ScreenManager.getInstance().changeScreen(ScreenManager.ScreenType.GAMEOVER);
+        }
 
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
             tryToFire();
@@ -157,6 +176,9 @@ public class Hero {
                         1, 1, 1, 0);
             }
 
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
+            ScreenManager.getInstance().changeScreen(ScreenManager.ScreenType.PAUSE);
         }
         position.mulAdd(velocity, dt);
         hitArea.setPosition(position);

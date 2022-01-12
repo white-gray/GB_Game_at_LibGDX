@@ -44,6 +44,16 @@ public class Assets {
                 createStandardFont(72);
                 createStandardFont(24);
                 break;
+            case PAUSE:
+                assetManager.load("images/game.pack", TextureAtlas.class);
+                createStandardFont(72);
+                createStandardFont(24);
+                break;
+            case GAMEOVER:
+                assetManager.load("images/game.pack", TextureAtlas.class);
+                createStandardFont(72);
+                createStandardFont(24);
+                break;
         }
     }
 
