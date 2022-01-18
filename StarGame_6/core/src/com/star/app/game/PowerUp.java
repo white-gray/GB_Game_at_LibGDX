@@ -81,7 +81,7 @@ public class PowerUp implements Poolable {
         this.active = true;
         this.power = power;
         this.time = 0.0f;
-        this.hitArea = new Circle(position, 100);
+        this.hitArea = new Circle(position, 30);
         this.inHitArea = false;
         this.defeatedHero = gc.getHero();
     }
@@ -92,7 +92,7 @@ public class PowerUp implements Poolable {
         if (!inHitArea) {
                 System.out.printf("\nhiT\n"+defeatedHero.getVelocity()+"\n");
 
-            this.velocity.set(defeatedHero.getVelocity());
+            this.velocity.set(this.velocity.sub(defeatedHero.getVelocity()));
         }
         position.mulAdd(velocity, dt);
         hitArea.setPosition(position);
