@@ -1,2 +1,0 @@
-com/star/app/desktop/DesktopLauncher.java
- com.star.app.desktop.DesktopLauncher
