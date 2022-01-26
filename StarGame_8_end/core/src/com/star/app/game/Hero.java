@@ -67,10 +67,10 @@ public class Hero extends Ship{
     }
 
     public Hero(GameController gc) {
-        super(gc, 100, 500);
+        super(gc, 100, 500, 0);
         this.position = new Vector2(ScreenManager.SCREEN_WIDTH / 2, ScreenManager.SCREEN_HEIGHT / 2);
         this.velocity = new Vector2(0, 0);
-        this.texture = Assets.getInstance().getAtlas().findRegion("ship");
+        this.texture = Assets.getInstance().getAtlas().findRegion("meShip");
         this.hitArea = new Circle(position, 29);
         this.money = 1500;
         this.sb = new StringBuilder();

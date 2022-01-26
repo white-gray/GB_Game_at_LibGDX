@@ -48,7 +48,7 @@ public class Ship {
         return position;
     }
 
-    public Ship(GameController gc, int hpMax, float enginePower) {
+    public Ship(GameController gc, int hpMax, float enginePower, int weaponNum) {
         this.gc = gc;
         this.hpMax = hpMax;
         this.hp = hpMax;

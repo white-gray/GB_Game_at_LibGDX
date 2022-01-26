@@ -38,6 +38,13 @@ ship
   orig: 64, 64
   offset: 0, 0
   index: -1
+meShip
+  rotate: false
+  xy: 300, 168
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
 smButton
   rotate: false
   xy: 260, 84

@@ -1,12 +1,11 @@
 package com.star.app.game;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.star.app.game.helpers.ObjectPool;
-import com.star.app.screen.utils.Assets;
 
 public class BotController extends ObjectPool<Bot> {
     private GameController gc;
+    private int numberOfBoat;
 
     @Override
     protected Bot newObject() {
@@ -22,6 +21,10 @@ public class BotController extends ObjectPool<Bot> {
             Bot b = activeList.get(i);
             b.render(batch);
         }
+    }
+
+    public int getNumberOfBot() {
+        return activeList.size();
     }
 
     public void setup(float x, float y) {

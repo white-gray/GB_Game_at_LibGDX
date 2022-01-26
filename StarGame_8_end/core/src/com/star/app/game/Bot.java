@@ -5,6 +5,8 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.star.app.game.helpers.Poolable;
 import com.star.app.screen.utils.Assets;
+import com.sun.tools.classfile.BootstrapMethods_attribute;
+import org.graalvm.compiler.loop.MathUtil;
 
 public class Bot extends Ship implements Poolable {
     private boolean active;
@@ -16,7 +18,7 @@ public class Bot extends Ship implements Poolable {
     }
 
     public Bot(GameController gc) {
-        super(gc, 50, 200);
+        super(gc, 5, 20, MathUtils.random(0,4));
         this.position = new Vector2(0, 0);
         this.velocity = new Vector2(0, 0);
         this.tempVec = new Vector2(0, 0);
@@ -32,7 +34,7 @@ public class Bot extends Ship implements Poolable {
     }
 
     public void deactivate() {
-        active = false;
+        active= false;
     }
 
     public void update(float dt) {
@@ -60,7 +62,7 @@ public class Bot extends Ship implements Poolable {
         }
 
         if (gc.getHero().getPosition().dst(position) < 300) {
-            tryToFire();
+//            tryToFire();
         }
     }
 

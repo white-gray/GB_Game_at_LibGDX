@@ -96,8 +96,8 @@ public class GameController {
 
         generateBigAsteroids(1);
 
-        botController.setup(100, 100);
-        botController.setup(1000, 100);
+        botController.setup(MathUtils.random(40,ScreenManager.SCREEN_HEIGHT), MathUtils.random(40,ScreenManager.SCREEN_WIDTH));
+        botController.setup(MathUtils.random(40,ScreenManager.SCREEN_HEIGHT), MathUtils.random(40,ScreenManager.SCREEN_WIDTH));
     }
 
     public void generateBigAsteroids(int n) {
@@ -130,6 +130,10 @@ public class GameController {
             level++;
             generateBigAsteroids(level <= 3 ? level : 3);
             timer = 0.0f;
+        }
+System.out.println("gc.botController.getBot() = " + botController.getNumberOfBot());
+        if (botController.getNumberOfBot() < 2) {
+            botController.setup(MathUtils.random(40,ScreenManager.SCREEN_HEIGHT), MathUtils.random(40,ScreenManager.SCREEN_WIDTH));
         }
         stage.act(dt);
     }
