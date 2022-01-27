@@ -96,8 +96,8 @@ public class GameController {
 
         generateBigAsteroids(1);
 
-        botController.setup(MathUtils.random(40,ScreenManager.SCREEN_HEIGHT), MathUtils.random(40,ScreenManager.SCREEN_WIDTH));
-        botController.setup(MathUtils.random(40,ScreenManager.SCREEN_HEIGHT), MathUtils.random(40,ScreenManager.SCREEN_WIDTH));
+//        botController.setup(MathUtils.random(40,ScreenManager.SCREEN_HEIGHT-40), MathUtils.random(40,ScreenManager.SCREEN_WIDTH-40));
+//        botController.setup(MathUtils.random(40,ScreenManager.SCREEN_HEIGHT-40), MathUtils.random(40,ScreenManager.SCREEN_WIDTH-40));
     }
 
     public void generateBigAsteroids(int n) {
@@ -131,9 +131,10 @@ public class GameController {
             generateBigAsteroids(level <= 3 ? level : 3);
             timer = 0.0f;
         }
-System.out.println("gc.botController.getBot() = " + botController.getNumberOfBot());
-        if (botController.getNumberOfBot() < 2) {
-            botController.setup(MathUtils.random(40,ScreenManager.SCREEN_HEIGHT), MathUtils.random(40,ScreenManager.SCREEN_WIDTH));
+System.out.println("gc.botController.getBot()_before = " + botController.getNumberOfBot());
+        if (botController.getNumberOfBot() < 3) {
+            botController.setup(MathUtils.random(40,ScreenManager.SCREEN_HEIGHT-40), MathUtils.random(40,ScreenManager.SCREEN_WIDTH-40));
+System.out.println("\t\t\tgc.botController.getBot()_after = " + botController.getNumberOfBot());
         }
         stage.act(dt);
     }

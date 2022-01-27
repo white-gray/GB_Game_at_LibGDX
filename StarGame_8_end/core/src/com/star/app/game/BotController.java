@@ -5,7 +5,6 @@ import com.star.app.game.helpers.ObjectPool;
 
 public class BotController extends ObjectPool<Bot> {
     private GameController gc;
-    private int numberOfBoat;
 
     @Override
     protected Bot newObject() {
